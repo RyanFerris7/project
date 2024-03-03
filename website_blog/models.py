@@ -11,7 +11,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique_for_date='publish')  
-    publish_date = models.DateTimeField(default=timezone.now) 
+    publish = models.DateTimeField(default=timezone.now) 
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     content = models.TextField()
     status = models.CharField(max_length=10, choices=options, default='draft')

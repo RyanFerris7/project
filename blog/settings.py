@@ -97,6 +97,13 @@ DATABASES = {
         dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
+# CSRF is required for logging into admin !!!
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeanyapp.com",
+    "https://*.herokuapp.com",
+    "https://8000-ryanferris7-project-8xoh88rqlfu.ws-eu108.gitpod.io"
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
